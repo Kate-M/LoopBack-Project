@@ -1,0 +1,16 @@
+<section>
+	<div class="message">
+  <h1>You are now registered.</h1>
+  <p>Please upload a profile picture.</p>
+
+  
+  <form  action="/api/Container" method="post" enctype="application/json">
+  <div class="profile-pic"><p><span>Upload an image...</span></p></div> 
+       <input class="name_pic" type="file" name="uploadedFile" onchange="console.log(this.value)">
+       
+        <button>Submit</button>
+</form>
+</div>
+<!-- <p>Please <a ui-sref="login" ui-sref-active="active">log in</a> to perform
+      more actions.</p> -->
+</section>

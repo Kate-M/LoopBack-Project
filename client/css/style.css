@@ -1,0 +1,803 @@
+/*********************global***************/
+* {
+  outline: none;
+  box-sizing:border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 3rem;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details,
+footer, header, hgroup, menu, nav, section 
+{
+  display: block;
+}
+body {
+  line-height: 1;
+
+}
+ol, ul 
+{
+  list-style: none;
+}
+blockquote, q 
+{
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after 
+{
+  content: '';
+  content: none;
+}
+table 
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img
+{
+  vertical-align: middle;
+}
+html 
+{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body 
+{
+  font-family:Fjalla,Helvetica,Arial,sans-serif;
+  background: url(../img/4.jpg) fixed;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+input, textarea, keygen, select, button
+{
+  font-family:Fjalla;
+}
+button 
+{
+  display: block;
+  background: #B5D7DE;
+  font-size:1.5rem;
+  font-weight::600;
+  padding:.5rem;
+  margin:1rem auto;
+  color:#3B2912;
+  border-radius: 20px;
+  border:0;
+  width: 100%;
+  height: 60px;
+  max-width: 160px;
+  cursor: pointer;
+}
+button:hover 
+{
+  box-shadow: inset 0 2px 0 rgba(51,106,113,.6),
+  0 2px 0 rgba(255,255,255,.4);
+
+
+}
+button:active 
+{
+  background:rgb(144,205,194);
+}
+[disabled] 
+{
+  background:#eee;
+  color:#ccc;
+}
+
+label {
+  display:inline-block;
+  text-align:center;
+  width: 250px;
+  color:#3B2912;
+  font-size:1.5rem;
+  margin-bottom: 20px;
+}
+select {
+  background:#ddd;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+p {
+  padding:0 1rem ;
+  width: 70%;
+  display: inline-block;
+  font-size:1.6rem  ;
+  color:#473D3D;
+  font-family: Baloo;
+  
+}
+/**********************header****************************/
+body > header 
+{
+  border-bottom:1px solid #ccc;
+  background-color: #90CDC2;
+  color:#4A3417;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+body > header h1
+ {
+  font-size:3rem;
+  padding:1rem;
+  font-family: Nexa;
+  text-align: center;
+}
+body > header h2 {
+  font-size:1rem;
+  padding:0.5rem;
+  text-align: center;
+}
+body > header h2 span
+{ 
+  color:#B5D7DE;
+  text-shadow:0 1px 1px rgba(0,0,0,.6);
+}
+
+body > header .logo
+{
+  padding-top:5px;
+}
+/*********************nav***********************************/
+body > header nav li 
+{
+  display:inline-block;
+  padding:1rem;
+  vertical-align:baseline;
+}
+/**************body > header nav li:nth-child()**************/
+body > header nav li a 
+{
+  color:#777;
+  padding:.6rem 1rem;
+  text-decoration:none;
+  font-size: 1.5rem;
+  font-family:Fjalla;
+  text-transform: uppercase;
+  
+}
+body > header nav li a:hover 
+{
+  border-bottom: 5px solid #3B2912;
+  color:#4A3417;
+}
+body > header nav li a.active
+ {
+  color:#4A3417;
+}
+/********************main*******************/
+main
+{
+  top:10%;
+  flex-grow: 1;
+}
+main section 
+{
+  padding:50px 0 20px ;
+}
+main section article 
+{
+  width: 90%;
+  margin: 50px auto;
+  margin-top:0;
+  height: 280px;
+  
+}
+main section article h1 
+{
+  font-size:1.5rem;
+  color:#635145;
+  margin:1rem  1.5rem 0 0;
+  padding-left: 1rem;
+  background-color: #BDE4DD;
+  border-radius: 0 55px 0 0;
+}
+
+main section article h2
+{
+  font-size:1.2rem;
+  margin-top: 0.6rem;
+  color:#000;
+  text-shadow:0 1px 1px rgba(0,0,0,.6);
+}
+main section article header h2
+{
+  color:#635145;
+  text-shadow:none;
+  font-size:2.3rem;
+  margin:1rem;
+}
+main section::after,
+main section article::after,
+header::after
+{
+  content: '';
+  display: table;
+  clear: both;
+}
+main section article figure,
+main section article figcaption
+{
+   display: inline-block;
+}
+main section article figcaption
+{
+  vertical-align: middle;
+}
+main section article header,
+main section article .content
+
+{
+  float:left;
+  width: 50%;
+ /* outline: 1px solid red;
+*/
+}
+main section article header
+{
+  height:100%;
+  font-size: 0;
+}
+main section article header>figure
+{
+  width: 100%;
+  height:100%; 
+ }
+ main section article header>figure figcaption
+{
+  width:50%;
+  text-align: center;
+}
+main section article header>figure img
+{
+  width:50%;
+  height:100%;
+  box-shadow:  15px 15px 0 rgba(255,255,255,.5),
+  -15px -15px 0 rgba(255,255,255,.5);
+  border-radius: 10%;
+  vertical-align: middle;
+}
+main section article .content
+{
+  position: relative;
+  background:rgba(239,231,220,.5);
+  border-radius:0 55px;
+  height: 100%;
+  box-shadow: 14px 5px 0 rgba(255,255,255,.5);
+}
+main section article .content p
+{
+  overflow: auto;
+  height:60%;
+  line-height: 2.5rem;
+  margin-top:2rem;
+}
+main section article .content figure
+{
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top:7px;
+  text-align: center;
+}
+main section article .content .actions
+{
+  position: absolute;
+  right: 15px;
+  top:30px;
+  width: 25%;
+  overflow: hidden;
+}
+
+main section article .content figure figcaption
+{
+
+  width: 120%;
+  position: absolute;
+  right: 110px;
+  top:3px;
+}
+main section article .content figure img
+{
+  width:100%;
+  height:100px;
+  border-radius: 50%;
+  border:5px solid #FFF;
+}
+header .content
+{
+  position:absolute;
+  left: 0;
+  top:5px;
+}
+
+header .content figure img
+{
+  width: 100px;
+  height: 100px;
+}
+header .content figure img
+{
+  width: 100%
+  height:auto;
+  border-radius: 50%;
+}
+/*****************main form********************/
+main section form 
+{
+  width: 95%;
+  margin:0 auto;
+}
+main section form fieldset
+{
+  border:0;
+  text-align: center;
+}
+
+.form-group,
+.action
+{
+  margin:50px auto;
+  font-size:1.5rem;
+}
+.form-group span
+{
+  text-shadow:0 1px 1px rgba(0,0,0,.8);
+  color:#F4D396;
+  font-size:2.2rem;
+}
+
+main section form legend
+{
+  opacity:0;
+}
+
+main select,
+main input,
+main textarea
+{
+  width: 40%;
+  height: 50px;
+  border-radius: 20px;
+  background:rgb(239,231,220);
+  border:0;
+  vertical-align:middle;
+  font-size:1.2rem;
+  font-family: Arial;
+}
+main .rating
+{
+  
+  width: 40%;
+  display: inline-block;
+}
+main input
+{
+  width: 30%;
+}
+
+main textarea
+{
+    border-radius: 0;
+    height: 250px;
+    text-align: left;
+    padding:5px 0;
+    text-align:left;
+}
+main textarea:focus
+{
+  border:3px solid #90CDC2;
+}
+
+main select
+{
+  cursor: pointer;
+  padding:0 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: rgb(239,231,220) url(../img/down.svg) 96% / 15% no-repeat;
+  background-size:5%;
+  overflow: hidden;
+
+}
+main select::-ms-expand { /* for IE 11 */
+    display: none;
+}
+option
+{
+  padding:0 50px;
+}
+
+main input
+{
+  text-align: center;
+}
+main input:focus
+{
+  box-shadow:inset 0 0 20px rgba(117,71,58,.4),
+   0 2px 0 rgba(255,255,255,.4),inset
+   0 2px 0 rgba(0,0,0,.2);
+}
+main input[type="radio"]
+{
+  width: 1.5rem;
+  height:1.5rem;
+  margin:0.2rem;
+  font-size:.8rem;
+  cursor: pointer;
+
+}
+
+form .profile-pic {
+  overflow:hidden;
+  width:100%;
+  height:50px;
+  background:rgb(239,231,220) url(../img/camera.svg) 95% no-repeat;
+  border-radius: 20px;
+     
+    }
+section .message .profile-pic p
+{
+ 
+ width: 100%;
+ margin: 0;
+
+}
+form .profile-pic p span
+{
+  vertical-align: middle;
+  font-size: 1.5rem;
+
+}
+input[type="file"]
+{
+  opacity:0;
+  filter:alpha(opacity:0);
+  font-size:1rem;
+  cursor:pointer;
+  padding:0px;
+  margin:-65px 245px 0 0px;
+  border:none;
+  width: 100%;
+}
+
+
+ /***************************message****************************/
+ section .message
+ {
+  width: 50%;
+  margin:0 auto; 
+  text-align: center;
+ }
+section .message h1
+{
+  font-size: 2rem;
+  color:rgb(117,116,116);
+  margin: 1rem 0;
+}
+section .message p
+{
+  font-size: 2.5rem;
+  color:rgb(117,116,116);
+  margin-bottom: 1rem;
+}
+section .message a
+{
+  text-decoration: none;
+  color:rgb(71,58,50);
+}
+
+/*****************************footer*********************************/
+footer
+{
+ 
+  height:100px;
+  background: #473A32;
+  text-align: center;
+  padding:2.5rem 0;
+
+}
+footer p
+{
+  padding:0;
+  vertical-align: middle;
+  color:#90CDC2;
+  font-family: Fjalla;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+@font-face {
+    font-family: Nexa; 
+    src: url('../fonts/Nexa.ttf'); 
+  
+   }
+@font-face {
+    font-family: Fjalla; 
+    src: url('../fonts/Fjalla.ttf');
+      }
+   @font-face {
+    font-family: Baloo; 
+    src: url('../fonts/Baloo.ttf');
+   
+   }
+/***************************(min-width: 2000px)****************************/
+@media only screen and (min-width: 2000px)
+{
+
+main section article 
+{
+  
+  height: 350px;
+}
+
+
+}
+/***************************(min-width: 1441px)****************************/
+
+@media only screen and (min-width: 1441px)
+{
+  main section form 
+    {
+     width: 50%;
+    }
+    main select, main textarea, main .rating
+
+{
+    width: 53%;
+}
+
+}
+/***************************(max-width: 1024px)****************************/
+
+@media only screen and (max-width: 1024px) 
+{
+  body > header h1
+  {
+    font-size: 2.3rem;
+  }
+  body > header nav li a 
+  {
+    font-size: 1.5rem;
+  }
+main section article 
+{
+  
+  height: 195px;
+  
+}
+main section article .content figure figcaption
+{
+  top: 35px;
+}
+
+}
+/***************************(max-width: 768px)****************************/
+
+@media only screen and (max-width: 768px)
+{
+/***header ***/
+ body > header h1
+{
+    
+  padding: 1rem 3.5em;
+}
+/***section***/
+button 
+{
+  margin: 0.5rem auto;
+  height: 50px;
+}
+main section article
+{
+  height: auto;
+}
+main section article header,
+main section article .content
+
+{
+  margin:10px 0; 
+  float:none;
+  width: 100%;
+}
+main section article 
+{
+  background:rgba(239,231,220,.5);
+  border-radius:0;
+  height:100%;
+  
+}
+main section article header
+{
+  height:190px;
+}
+main section article h1 {
+    
+    margin: 1rem 1rem 0 0;
+    
+    border-radius:0;
+}
+main section article header h2 {
+    
+    font-size: 1.8rem;
+   
+}
+
+main section article .content 
+{
+  background:transparent;
+  border-radius:none;
+  height: 140px;
+  box-shadow: none;
+}
+main section article .content figure
+{
+  width: 70px;
+  top:-24px;
+  
+}
+main section article .content figure img
+{
+
+  height:70px;
+  border:2.5px solid #FFF;
+}
+main section article .content figure figcaption {
+  width: 165%;
+  right: 70px;
+  top: 18px;
+}
+main section article .content p
+{
+  overflow: auto;
+}
+
+}
+/***************************(max-width: 425px)****************************/
+
+@media only screen and (max-width: 425px)
+{
+body > header figure,
+body > header nav
+{
+  float:left;
+}
+body > header nav
+{
+  width: 40%;
+}
+body > header figure
+{
+  width: 60%;
+}
+body > header .logo,
+body > header nav
+{
+  padding-top: 32px;
+}
+
+ body > header h1 {
+  font-size: 1.7rem;
+  padding: 1rem 0;
+}
+body > header nav li
+{
+  padding:0.6rem 0;
+  display: block;
+}
+body > header nav li:first-child,
+body > header nav li a:first-child
+{
+  padding-top:0;
+}
+body > header nav li a
+{
+  padding:.6rem 0;
+}
+body > header .logo
+{
+  padding-left: 30px;
+}
+header .content figure img
+{
+  width: 70px;
+  height: 70px;
+}
+/***form***/
+
+.form-group, .action {
+    margin-top:0;
+    font-size: 1.5rem;
+}
+
+label
+{
+  width: 300px;
+}
+main select,
+main input,
+main textarea
+{
+  width: 95%;
+}
+main .rating
+{
+  width: 25%;
+}
+main input[type="radio"]
+{
+  margin: 1rem 0.2rem;
+}
+/***section***/
+
+main section article header
+{
+  height:115px;
+}
+
+main section article header>figure img
+{
+  width:45%;
+  height:100%;
+  box-shadow:  none;
+  border-radius: 10%;
+  vertical-align: middle;
+}
+
+main section article header>figure figcaption
+{
+    width: 55%;
+}
+
+main section article .content figure figcaption 
+{
+  top: 45px;
+}
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px)
+{
+main select, main textarea,main .rating
+{
+    width: 95%;
+  }
+main input
+{
+  width: 60%;
+}
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px)
+{
+main select, main textarea, main .rating
+
+{
+    width: 53%;
+}
+}

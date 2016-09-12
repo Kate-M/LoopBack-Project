@@ -1,0 +1,28 @@
+<section>
+  <article ng-repeat="r in reviews.slice().reverse()">
+    
+
+    <header>
+      <figure>
+        <img ng-src="{{r.coffeeShop.img}}">
+          <figcaption>
+            <h2>{{r.coffeeShop.name}}</h2>
+        </figcaption>
+      </figure>
+    </header>
+
+    <div class="content"><h1>{{r.date | date}} | {{r.rating}}&#9733;</h1>
+    <p>{{r.comments}}</p>
+
+<!-- <form action="/api/Reviewer/me/upload/photo" method="post" enctype="multipart/form-data"> 
+        <input type="file" name="uploadedFile">
+        <input type="submit">
+</form> -->
+
+    <div class="actions" ng-show="currentUser">
+      <button ui-sref="edit-review({ id: r.id })">Edit</button>
+      <button a ui-sref="delete-review({ id: r.id })">Delete</button>
+      </div>
+    </div>
+  </article>
+</section>

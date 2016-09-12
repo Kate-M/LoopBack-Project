@@ -1,0 +1,26 @@
+<section>
+  <article ng-repeat="r in reviews.slice().reverse()">
+    <header>
+      
+   <!--    <h2>{{r.reviewer.email}}</h2> -->
+      <figure>
+      	<img ng-src="{{r.coffeeShop.img}}">
+      		<figcaption>
+      			<h2><span>{{r.coffeeShop.name}}</span></h2>
+      	</figcaption>
+      </figure>
+    </header>
+
+    <div class="content">
+    	<h1>{{r.date | date}} | {{r.rating}}&#9733;</h1>
+    <p>{{r.comments}}</p>
+    <figure>
+    	<img ng-src="{{r.reviewer.img}}">
+    		<figcaption>
+    			<h2>{{r.reviewer.email}}</h2>
+    		</figcaption>
+
+    </figure>
+    </div>
+  </article>
+</section>
